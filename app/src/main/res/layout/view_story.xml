@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="story" type="com.lopeemano.hackernews.model.Story"/>
+        <variable
+            name="listener"
+            type="com.lopeemano.hackernews.viewmodel.StoryViewModel.OnItemClickListener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> listener.onItemClick(item)}"
+            android:text="@{story.title}"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{story.title}"/>
+
+    </LinearLayout>
+</layout>
